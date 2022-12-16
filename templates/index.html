@@ -1,22 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Australia</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-</head>
-<body>
-    <h1>AUSTRALIA</h1>
-    <img src="https://raw.githubusercontent.com/Kacpez/WFiIS-PGK-Projekt-11/Jasiek-branch/obrazy_testowe/krajobraz.jpg">
-    <br>
-    <form action="greet" method="post">
-        {% for message in get_flashed_messages() %}
-             <p>{{ message }}</p>
-         {% endfor %}
-        <br>
-        <input type="text" name="name_input">
-        <br>
-        <input type="submit" value="MIASTO" id="greet">
-    </form>
-</body>
-</html>
+{% extends 'base.html' %} 
+{% block content %}
+<div class="linki">
+<p></p>
+  </div>
+<div class="bod"> 
+<a href="/skoczek">
+  <div class="post">
+    <img src="{{ url_for('static', filename='images/skoczek.jpg') }}" alt="">
+    <div class="post-s">
+      <h2>
+  Skoczkowie</h2>
+  </div>
+  </div>
+  </a>
+  <a href="/skocznia">
+  <div class="post">
+      <img src="{{ url_for('static', filename='images/skocznie.jpg') }}" alt="">
+      <div class="post-s">
+        <h2>
+    Skocznie</h2>
+    </div>
+    </div>
+  </a>
+  <a href="/kraj">
+    <div class="post">
+      <img src="{{ url_for('static', filename='images/kraje.jpg') }}" alt="">
+      <div class="post-s">
+        <h2>
+    Kraje</h2>
+    </div>
+    </div>
+  </a>
+</div>
+{% endblock %}
